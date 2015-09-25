@@ -23,14 +23,20 @@ public class Timer {
 		return duration;
 	}
 	
+	/** Returns the duration
+     	* If Value is Zero, Return Zero Value String Such as N/A or Included
+     	* @return duration of cycle time in s
+     	*/ 
 	protected double getDurationSeconds() {
 		return (double)duration/1000;
 	}
 	
+	/** Prints the duration in ms*/
 	protected void printTime() {
 		System.out.println(duration + "ms");
 	}
 	
+	/** Prints the duration in s*/
 	protected void printTimeSeconds() {
 		System.out.println((double)duration/1000 + "s");
 	}
