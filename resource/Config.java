@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Main {
+public class Config {
 
 	public static void main(String[] args) throws IOException {
 		GetPropValues properties = new GetPropValues();
