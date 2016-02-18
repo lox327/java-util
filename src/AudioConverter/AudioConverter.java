@@ -24,7 +24,7 @@ public class AudioConverter {
 	}
 	
 
-	public void convertAll(String audioPath) throws IllegalArgumentException, InputFormatException, EncoderException {
+	public void convertAllToMp3(String audioPath) throws IllegalArgumentException, InputFormatException, EncoderException {
 		File folder = new File(audioPath);
 		File[] listOfFiles = folder.listFiles();
 
@@ -35,6 +35,22 @@ public class AudioConverter {
 	    	if (listOfFiles[i].isFile() && !listOfFiles[i].getName().contains(".mp3")) {
 	    		source = audioPath + "\\" + listOfFiles[i].getName();
 	    		target = audioPath + "\\" + listOfFiles[i].getName().replace("wav", "mp3");
+	    		convertOne(source, target);
+	    	}
+	    }
+	}
+	
+	public void convertAllToWav(String audioPath) throws IllegalArgumentException, InputFormatException, EncoderException {
+		File folder = new File(audioPath);
+		File[] listOfFiles = folder.listFiles();
+
+		String source = null;
+		String target = null;
+		
+	    for (int i = 0; i < listOfFiles.length; i++) {
+	    	if (listOfFiles[i].isFile() && !listOfFiles[i].getName().contains(".wav")) {
+	    		source = audioPath + "\\" + listOfFiles[i].getName();
+	    		target = audioPath + "\\" + listOfFiles[i].getName().replace("mp3", "wav");
 	    		convertOne(source, target);
 	    	}
 	    }
