@@ -12,6 +12,7 @@ public class Timer {
 	/** Stop the timer */	
 	protected void endTimer() {
 		endTime = System.nanoTime();
+		duration = (endTime - startTime)/1000000; //divide by 1000000 to get milliseconds
 	}
 	
 	/** Returns the duration
@@ -19,7 +20,6 @@ public class Timer {
      	* @return duration of cycle time in ms
      	*/ 
 	protected long getDuration() {
-		duration = (endTime - startTime)/1000000; //divide by 1000000 to get milliseconds
 		return duration;
 	}
 	
